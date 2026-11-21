@@ -1,0 +1,256 @@
+Chapter 2 Notes
+
+Lesson 1:
+
+Reserved Words (These cannot be variable names):
+False   class   return  is      finally
+None    if      for     lambda  continue
+True    def     from    while   nonlocal
+and     del     global  Note    with
+as      elif    try     or      yield
+assert  else    import  pass
+break   except  in      raise
+
+Python Variable Name Rules:
+
+1.  must start with a letter or underscore _
+2.  Must consist of letters, numbers, and underscores
+3.  CaSe SeNsItIvE
+
+Good Examples:  spam    eggs    spam23  _speed
+Bad Examples:   23spam  #sign   var.12
+Different:      spam    Spam    SPAM
+
+Make mnemonic variable names
+
+Example of mnemonic varable names in code:
+
+hours = 35
+rate = 12.75
+pay = hours * rate
+print ( pay )
+
+output:
+446.25
+
+We assign variables using the equals sign " = "
+
+An assignment statement consists of an expression on the right hand side and a varable to store the result of the left hand side.
+
+Example:
+
+x = 0.6
+x = 3.9 * x * ( 1 - x )
+#x = 0.936
+print (x)
+
+Output:
+0.936
+
+Lesson 2:
+
+There are Numeric Expressions in Python:
+" + " = Addition
+" - " = Subtraction
+" * " = Multiplication
+" / " = Division
+" ** " = Power
+" % " = Remainder ( Modulo Operator )
+
+Example of Remainder:
+
+jj = 23
+kk = jj % 5
+print (kk)
+
+output:
+3
+
+Explaination: jj is divided by 5 and becomes " 23 / 5 " which is " 4.4 " or " 4 + 3 / 5 ", so 3 is the remainder.
+
+Remember PEMDAS for the Operator Precedence Rules ( Which Operator goes first )
+
+Variables have " Types "
+Python knows the difference between integer numbers and strings based on the information that the program has been given.
+The addition sign " + " can be used to add two strings together
+
+Example:
+
+greeting = 'hello, '
+name = 'Caleb'
+punctuation = '!'
+dialogue = greeting + name + punctuation
+print ( dialogue )
+
+Output:
+hello, Caleb!
+
+Type Matters
+Python knows what type of variable each one is.
+Python will not be able to change a functions type by just simply adding an integer to a string.
+The function " type() " can be used to find a variable's type.
+
+Example:
+age = 18
+name = 'Caleb'
+type1 = type ( age )
+type2 = type ( name )
+print ( type1 )
+print ( type2 )
+
+Output:
+<class 'int'>
+<class 'str'>
+
+Several Types of Numbers:
+Integers are whole numbers: -14, -2, 0, 5, 100
+Floats ( Floating Point Numbers ) have decimal points: -8.9, 0.00, 3.14
+Integers can convert their values to floats by using the " float() " command.
+
+Example:
+i = 42
+oldtype = type ( i )
+print ( oldtype )
+print ( i )
+f = float ( i )
+newtype = type ( f )
+print ( newtype )
+print ( f )
+
+Output:
+<class 'int'>
+42
+<class 'float'>
+42.0
+
+Integer Division always produces a floating point result in newer versions of Python ( Python 2 would round the numbers down into integers )
+
+Example:
+print ( 10 / 2 )
+print ( 9 / 2 )
+print ( 99 / 100 )
+
+Output:
+5.0
+4.5
+0.99
+
+Both the " float() " and " int() " functions can be used to convert strings into number values.
+There will be an error if the string has characters other than numbers.
+
+Example:
+
+#string:
+number = '21'
+stringtype = type ( number )
+print ( stringtype )
+print ( number )
+
+#integer:
+integer = int ( number )
+integertype = type ( integer )
+print ( integertype )
+print ( integer )
+integer = integer - 1
+print ( integer )
+
+#float:
+float = float ( number )
+floattype = type ( float )
+print ( floattype )
+print ( float )
+float = float / 4
+print ( float )
+
+Output:
+
+<class 'str'>
+21
+<class 'int'>
+21
+20
+<class 'float'>
+21.0
+5.25
+
+The funtion " input() " can be used to pause and read data from the user.
+The " input() " function returns a string
+
+Example:
+name = input ( 'What is your name? ' )
+print ( 'Welcome, ' + name + '.' )
+#You can also use " , " right after the string " 'Welcome, ' " to substitute for the addition symbol " + "
+
+Output:
+What is your name? [Caleb]
+Welcome, Caleb.
+
+Here is a time converter script that I wrote:
+
+time = input ( 'What time is it in Texas? ' )
+timetx = float ( time )
+if timetx > 3.00:
+    timetx = timetx - 12.00
+timeru = timetx + 9.00
+print ( 'The time in Saint Petersburg, Russia is', timeru )
+
+Here is the output:
+
+What time is it in Texas? [2.51]
+The time in Saint Petersburg, Russia is 11.51
+
+I added a 12 and 24 hour clock mode for personalized results:
+
+clock = input ( '12 or 24 hour clock? ' )
+time = input ( 'What time is it in Texas? ' )
+timetx = float ( time )
+if timetx > 3.00 and clock == '12':
+    timetx = timetx - 12.00
+if timetx > 15.00 and clock == '24':
+    timetx = timetx - 24
+timeru = timetx +9.00
+print ( 'The time in Saint Petersburg, Russia is', timeru )
+
+Here's the output:
+
+12 or 24 hour clock? [24]
+What time is it in Texas? [11.02]
+The time in Saint Petersburg, Russia is 20.02
+
+Here's some code that I tried writing and it has some problems:
+
+timechange = input ( 'Have you most recently leaped forward or back for time change? ' )
+timetype = input ( 'What time of the day is it? (ie. Morning, Evening, or Night) ' )
+time = input ( 'What time is it in Texas? (Format time with a " . " instead of a " : " ) ' )
+timetx = float ( time )
+if timetx > 4.00 and timechange == 'forward':
+    if timetype == 'morning ' or timetype == 'Morning' or timetype == 'am':
+        morning = 0
+    else:
+        morning = 1
+    timetx = timetx + 3.00
+elif timetx > 3.00 and timechange == 'back':
+    if timetype == 'morning ' or timetype == 'Morning' or timetype == 'am':
+        morning = 0
+    else:
+        morning = 1
+    timetx = timetx + 3.00
+else:
+    if timetype == 'morning ' or timetype == 'Morning' or timetype == 'am':
+        morning = 1
+    else:
+        morning = 0
+    if timechange == 'forward':
+        timeru = timetx + 9.00
+    else:
+        timeru = timetx + 8.00
+hourru = int ( timeru )
+minuteru = int ( timeru - hourru )
+if morning == 1:
+    timeofday = 'am'
+else:
+    timeofday = 'pm'
+print ( 'The time in Saint Petersburg, Russia is', hourru, ":", minuteru, timeofday )
+
+I didn't want to delete it since I feel like it would be good to keep it.
+

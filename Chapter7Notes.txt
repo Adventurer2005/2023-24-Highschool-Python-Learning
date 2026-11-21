@@ -1,0 +1,160 @@
+Chapter 7:
+
+Lesson 1:
+
+Files can be opened in python code.
+They can be opened using the " open() " function.
+The perameters of the function are the filename and then the mode.
+
+Here is an example:
+
+fhand = open( 'file.txt', 'r' )
+print ( fhand )
+
+Output:
+
+<_io.TextIOWrapper name='file.txt' mode='r' encoding='cp1252'>
+
+The newline character is used to make a new line in either the terminal or in a file.
+The " \n " is used to do this.
+
+Example:
+
+stuff = 'Sup,\nBruh'
+print ( stuff )
+
+Output:
+
+Sup,
+Bruh
+
+Although " \n " appears to be two characters, it is in fact just one character:
+
+note = "1\n2"
+print ( len ( note ) )
+
+Output:
+
+3
+
+" \n " is also a form of white space.
+
+Lesson 2:
+
+A file can be read as a sequence of strings.
+The " for() " loop can be used to iterate through the sequence.
+
+xfile = open ( 'file.txt' )
+for line in xfile :
+    print ( line )
+
+Output:
+
+Hello.
+
+My name is caleb.
+
+You are now my brother.
+
+For some reason the text is double spaced, idk why.
+
+We can also count lines in a file:
+
+fhand = open ( 'file.txt' )
+count = 0
+for line in fhand :
+    count = count + 1
+print ( 'Line count:', count )
+
+
+Output:
+
+Line count: 3
+
+A whole file can be put into a single string using the " .read() " ending:
+
+fhand = open ( 'file.txt' )
+inp = fhand.read()
+print ( len ( inp ) )
+print ( inp [ : 20 ] )
+
+Output:
+
+48
+Hello.
+My name is ca
+
+We can also search through a file looking for a certain word:
+
+
+fhand = open ( 'F:\Documents\Text Files\Bible_English-KJV.txt' )
+for line in fhand :
+    if line.startswith('In') :
+        print ( line )
+
+Whenever using the loop and having multiple print lines, each print function adds a new line.
+That is why there is an extra space between each line.
+"rstrip()" can be used to strip off the extra empty lines in the output.
+
+Here's what it would look like:
+
+fhand = open ( 'file.txt' )
+for line in fhand :
+    line = line.rstrip()
+    print ( line )
+
+Here is the output:
+
+Hello.
+My name is caleb.
+You are now my brother.
+
+There is also an operation that can be used whenever in a loop.
+The " continue " operator is used here.
+
+We can use " continue " to search for a word in some file:
+
+fhand = open ( 'F:\Documents\Text Files\Bible_English-KJV.txt' )
+for line in fhand :
+    line = line.rstrip()
+    if not 'Caleb' in line :
+        continue
+    print ( line )
+
+In that example, I looked at all of the parts where Caleb is mentioned in the Bible.
+I will not include the output since it will be to much text.
+
+A file name can also be inputted by the user:
+
+print ( 'Pick a file name: ' )
+fname = input ( '>> ' )
+try :
+    fhand = open ( fname )
+except :
+    print ( 'The file "' + fname + '" does not exist.')
+    quit()
+count = 1
+for line in fhand :
+    line = line.rstrip()
+    print ( count , line )
+    count  = count + 1
+
+Input 1:
+
+Pick a file name:
+>> file.txt
+
+Output 1:
+
+1 Hello.
+2 My name is caleb.
+3 You are now my brother.
+
+Input 2:
+
+Pick a file name: 
+>> something
+
+Output 2:
+
+The file "something" does not exist.

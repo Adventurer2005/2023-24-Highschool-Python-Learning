@@ -1,0 +1,36 @@
+Chapter 9
+
+Lesson 1
+
+Dictionary is a collection of an " in " variable and an " out " variable.
+Comparing lists and collections:  Lists are mre organized but dictionaries have a key which shows the variable that the key holds.
+Dictionaries are Python's most powerful way of storing collections.
+Dictionaries allow for fast database like operations in Python.
+The Dictionary is known by other terms like an Associative array, a Properties or Map or Hashmap, or a Property Bag.
+The idea is that the way to find the information is using an index.
+Here is an example of a list created using Python syntax:
+
+backpack = dict()
+backpack [ 'pencil' ] = 30
+backpack [ 'eraser' ] = 10
+backpack [ 'notebook' ] = 5
+print ( backpack )
+print ( backpack [ 'eraser' ] )
+
+Output:
+{'pencil': 30, 'eraser': 10, 'notebook': 5}
+10
+
+Indexing in a list uses numbers but a dictionary uses names or strings to index position.
+Here is an example of defining a dictionary using curly brackets " {} ":
+
+dictionary = { "caleb" : 18 , "jonathan" : 16 , "timothy" : 14 }
+empty = {}
+
+Note that to make an empty dictionary you just don't put any values inside the curly brackets.
+
+Lesson 2:
+
+Names inside of a dictionary can be counted.
+To count names using a dictionary, the name can be inputted as an index and then the intex can hold an integer.
+Every time the name is seen then the integer goes up by one.

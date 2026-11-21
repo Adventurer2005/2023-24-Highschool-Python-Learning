@@ -1,0 +1,315 @@
+Chapter 6:
+
+Lesson 1:
+
+A " String " data type is a sequence of characters.
+A string literal uses quotes ' Hello ' or " Hello ".
+For strings, " + " means " concatenate ".
+If a string contains numbers, it is still a string.
+Numbers can be converted from a string into an integer using the " int() " function.
+
+It is perferred to read data using strings and then parse and convert data as needed.
+Raw input from the user is almost always going to be a string data type.
+
+We can get any single character in a string using an index specified in square brackets " [] ".
+The index value is an integer value starting at zero " 0 ".
+The index value can be an expression that is computed.
+
+Example:
+
+name = "Caleb"
+letter = name [ 1 ]
+print ( letter )
+x = 3
+y = name [ x - 1 ]
+print ( y )
+
+Output:
+
+a
+l
+
+Python will give an error if the number is greater than the string length.
+
+Example:
+
+name = "John"
+letter = name [ 5 ]
+print ( letter )
+
+Output:
+
+Traceback (most recent call last):
+  File "F:\Documents\Coding\Python_Learning\scratch.py", line 2, in <module>
+    letter = name [ 5 ]
+             ~~~~~^^^^^
+IndexError: string index out of range
+
+There is a function that can be used to display the length of a string.
+The " len() " function is used to give an integer value of how long a string is.
+
+Example:
+
+string = input ( ">> " )
+print ( 'The word " ' + string + ' " is this many characters long:' )
+print ( len ( string ) )
+
+Input:
+
+>> My name is something, idk
+
+Output:
+
+The word " My name is something, idk " is this many characters long:
+25
+
+A simple loop can be made to make an index of each letter in a string:
+
+name = "Joshua"
+index = 0
+while index < len ( name ) :
+    letter = name [ index ]
+    print ( index, letter )
+    index = index + 1
+
+Output:
+
+0 J
+1 o
+2 s
+3 h
+4 u
+5 a
+
+A definite loop can also be made:
+
+name = "Jacob"
+for letter in name :
+    print ( letter )
+
+Output:
+
+J
+a
+c
+o
+b
+
+As can be seen in this code, the string acts like a list of integers, simplifying the code.
+We do not need an iteration variable whenever using a definite loop in this case.
+
+Here is an example of a chart with the definite loop:
+
+print ( "What is your name? " )
+name = input ( ">> " )
+number = 1
+print ( "+------+--------+")
+print ( "| Line | Letter |")
+print ( "+------+--------+")
+for letter in name :
+    if number < 10 :
+        print ( "|" , number , "   |" , letter , "     |" )
+    elif number >= 10 and number < 100:
+        print ( "|" , number , "  |" , letter , "     |" )
+    elif number >= 100  and number < 1000 :
+        print ( "|" , number , " |" , letter , "     |" )
+    elif number >= 1000 and number < 10000 :
+        print ( "|" , number , "|" , letter , "     |" )
+    else :
+        print ( "|char n|reached |")
+    number = number + 1
+print ( "+------+--------+")
+
+Input:
+
+What is your name? 
+>> Jaquavius IV
+
++------+--------+
+| Line | Letter |
++------+--------+
+| 1    | J      |
+| 2    | a      |
+| 3    | q      |
+| 4    | u      |
+| 5    | a      |
+| 6    | v      |
+| 7    | i      |
+| 8    | u      |
+| 9    | s      |
+| 10   |        |
+| 11   | I      |
+| 12   | V      |
++------+--------+
+
+Lesson 2:
+
+" Slicing " is a meathod used to take portions of a string and slice it off.
+A section of a string can be observed using a colon operator " : " in the square brackets " [] ".
+The first number in the colon is the starting number and the last number is the letter up to it but not after it.
+If the second number is beyond the end of the string, it stops at the end.
+
+Example:
+
+time = '14:51'
+print ( time [ 0 : 2 ] )
+print ( time [ 3 : 5 ] )
+print ( time [ : ] )
+
+Output:
+
+14
+51
+14:51
+
+String concatenation is a meathod of adding two strings of text together.
+The plus operator " + " is used to concatenate the strings.
+
+Example:
+
+a = 'Hello'
+b = a + 'There'
+print ( b )
+c = a + ' ' + 'There'
+print ( c )
+
+Output:
+
+HelloThere
+Hello There
+
+As can be seen, the concatenations, string " b " does not have a space between the two letters since the concatenation using the plus operator does not add a space.
+In variable " c ", there is a space since it was added as a separate string in the concatenation.
+The comma " , " can be used to concatenate strings but I have only found that it works best in the " print() " function.
+
+The operator " in " can be used to test if a letter or a string is in a string.
+
+Example:
+
+name = "Jeffery"
+test1 = 'J' in name
+test2 = 'z' in name
+test3 = 'Jeff' in name
+print ( test1, test2, test3 )
+if 'e' in name :
+    print ( "It's there, bruh. " )
+
+Output:
+
+True False True
+It's there, bruh. 
+
+Strings can also be compared since they have a value.
+
+Example:
+
+print ( "Give me your name: " )
+YourName = input ( ">> " )
+MyName = "Caleb"
+if YourName > MyName :
+    print ( "Ha, my name comes before your name, L." )
+elif YourName < MyName :
+    print ( "Ok, your name is greater than mine, I guess." )
+else :
+    print ( "Well what do you know? We have the same name." )
+    print ( "But I'm the better one. " )
+
+Input 1:
+
+Give me your name:
+>> Jonathan
+
+Output 1:
+
+Ha, my name comes before your name, L.
+
+Input 2:
+
+Give me your name:
+>> Aaron
+
+Output 2:
+
+Ok, your name is greater than mine, I guess.
+
+Input 3:
+
+Give me your name: 
+>> Caleb
+
+Output 3:
+
+Well what do you know? We have the same name.
+But I'm the better one.
+
+Python has a number of string functions which are in the string library.
+We can append the function to the string variable to use it.
+For example, there is a " .lower " ending that can be added to a string to make it all lower case.
+
+Example:
+
+greet = 'Hello my Dude'
+lowercase = greet.lower()
+print ( lowercase )
+print ( greet )
+print ( 'You are my Brother'.lower() )
+
+Output:
+
+hello my dude
+Hello my Dude
+you are my brother
+
+Here's another example:
+
+print ( 'Write something: ' )
+input = input ( ">> " )
+print ( "Angry: " )
+print ( input.upper() + "!" )
+print ( "Quiet: " )
+print ( input.lower() + "." )
+
+Input:
+
+Write something: 
+>> I hate you
+
+Output:
+Angry: 
+I HATE YOU!
+Quiet:
+i hate you.
+
+There is also a search and replace function:
+
+greet = 'Sup, bruh.'
+greeting = greet.replace( 'Sup' , 'What is up' )
+formal = greeting.replace( 'bruh' , 'my brother' )
+print ( greet )
+print ( formal )
+
+Output:
+
+Sup, bruh.
+What is up, my brother.
+
+White space can be removed using " .lstrip() " or " .rstrip() " to remove the space on either the left or the right of the string.
+The " .strip() " ending can be used to do so on both sides.
+" .startswith() " can be used to test if a string with words starts with a word, an not a letter.
+
+Parsing and extracting text from a string can be useful whenever there are signs around the string that is searched for.
+An example is if a number is searched for in a text.
+
+data = "This is lane #214."
+before = data.find ( '#' )
+after = data.find ( '.', before )
+number = data [ before + 1 : after ]
+print ( number )
+
+Output:
+
+214
+
+There are two types of strings.  There is class 'str' and there is class 'unicode'.
+Unicode is a thing of Python 2 but I am using Python 3 so I don't need to worry about this.
+" Халев " would be unicode but " Caleb " would not.

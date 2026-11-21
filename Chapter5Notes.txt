@@ -1,0 +1,291 @@
+Chapter 5:
+
+Lesson 1:
+
+A while loop is a meathod for iteration in Python.  
+The function " while " is used to start a while loop.
+After the " while " function a condition follows which is either true or false.
+If the condition is true then the while loop will continue to loop until the condition is false.
+Here is an example:
+
+n = 5
+while n > 0 :
+    print ( n )
+    n = n - 1
+print ( 'finish ' )
+print ( n )
+
+Output:
+
+5
+4
+3
+2
+1
+finish
+0
+
+We can see in this program that n decreases every time the while loop runs until n = 0.  The loop ended whenever n = 0.
+An infinite loop happens whenever the condition in a while loop will never be false.
+Here's an example:
+
+x = 0
+while x = 0 :
+    print ( x )
+
+The output is infinite here.
+A zero trip loop never runs.
+Here is an example:
+
+x = 0
+while x > 0 :
+    print ( 'yes' )
+print ( 'no' )
+
+Output:
+
+no
+
+To break out of a loop the " break " function is helpful to do this.
+
+print ( 'say yes. ' )
+while True :
+    line = input ( '> ' )
+    if line == 'yes' :
+        break
+    print ( line )
+print ( 'good job. ' )
+
+Output:
+
+say yes. 
+> [ yes ]
+good job. 
+
+The while loop that is used here is called an Indefinite loop.
+This type of loop goes on until the condition is false.
+
+Lesson 2:
+
+We use the " for " function to run a " Definite Loop ".
+The Definite loop runs a finite set of things.
+We can write a loop to run a loop once for each item in a set using the Definite loop.
+These loops execute an exact number of times.
+Example:
+
+for i in [ 5, 4, 3, 2, 1 ] :
+    print ( i )
+print ( 'finish. ' )
+
+Output:
+
+5
+4
+3
+2
+1
+finish. 
+
+Here's a definite loop with strings:
+
+greetings = [ 'good morning! ', 'good afternoon! ', 'good evening! ' ]
+for greeting in greetings :
+    print ( 'Hello,', greeting )
+print ( 'finished ' )
+
+Output:
+
+Hello, good morning! 
+Hello, good afternoon! 
+Hello, good evening!
+finished
+
+A simple definite loop have iteration varables that change through a loop.
+The variable goes through the list shown in the square brackets " [] ".
+It checks whether the loop is complete or incomplete; if it is incomplete, it continues on until it is complete and then finishes.
+We use the " in " operator to show that the sequence is in the variable.
+The loop iterates as many times as there are variables in the sequence.
+
+Lesson 3:
+
+Loop Idioms are patterns that we use to construct loops.
+It helps to make " smart " loops.
+Here's an example of a practical loop: finding the greatest number in a list.
+Here is a meathod for doing that:
+
+current_max = 0
+print ( 'Before:', current_max )
+for number in [ 9, 41, 12, 3, 74, 15 ] :
+    if number > current_max :
+        current_max = number
+    print ( current_max, number )
+print ( 'Result:', current_max )
+
+Output:
+
+Before: 0
+9 9
+41 41
+41 12
+41 3
+74 74
+74 15
+Result: 74
+
+We see that on the left side the program remembers the current largest number and at the end of the loop, it finishes with the greatest number observed in the set compared to each other number.
+
+Lesson 4:
+
+Here's a meathod for counting the " rotations " or number of times a loop is run:
+
+rev = 0
+print ( 'Lines Before:', rev )
+for loop in [ 9, 41, 12, 3, 47, 15 ] :
+    rev = rev + 1
+    print ( rev, loop )
+print ( 'Lines after:', rev )
+
+Output:
+
+Lines Before: 0
+1 9
+2 41
+3 12
+4 3
+5 47
+6 15
+Lines after: 6
+
+Here's a meathod for adding all the integers from a list into one variable:
+
+sum = 0
+print ( 'Sum input:', sum )
+for list in [ 9, 41, 12, 3, 47, 15 ] :
+    sum = sum + list
+    print ( sum, list )
+print ( 'Sum output:', sum )
+
+Output:
+
+Sum input: 0
+9 9
+50 41
+62 12
+65 3
+112 47
+127 15
+Sum output: 127
+
+Here's a meathod for counting the lines and taking the sum of all the numbers in a loop:
+
+line = 0
+sum = 0
+print ( 'Start:', line, sum )
+for number in [ 9, 41, 12, 3, 47, 15 ] :
+    line = line + 1
+    sum = sum + number
+    print ( line, sum, number )
+print ( 'End:', line, sum )
+
+Output:
+
+Start: 0 0
+1 9 9
+2 50 41
+3 62 12
+4 65 3
+5 112 47
+6 127 15
+End: 6 127
+
+We can filter in a loop by using the " if " statement inside of a definite loop.
+Here is an example:
+
+print ( 'We will check to see if our list has the number [ 3 ].' )
+found = False
+print ( 'Start:', found )
+for number in [ 9, 41, 12, 3, 47, 15 ] :
+    if number == 3 :
+        found = True
+    print ( number, found )
+if found == False :
+    result = '3 does not exist in the list.'
+if found == True :
+    result = '3 exists in the list.'
+print ( 'End:', found, result )
+
+Output:
+
+We will check to see if our list has the number [ 3 ]:
+Start: False
+9 False
+41 False
+12 False
+3 True
+47 True
+15 True
+End: True 3 exists in the list.
+
+Here is my meathod for finding the largest and the smallest values in a list:
+
+largest = 0
+smallest = 127
+print ( 'Start:', largest, smallest )
+for number in [ 9, 41, 12, 3, 47, 15 ] :
+    if number > largest :
+        largest = number
+    if number < smallest :
+        smallest = number
+    print ( largest, smallest, number )
+print ( 'Finish:', largest, smallest )
+
+Output:
+
+Start: 0 127
+9 9 9
+41 9 41
+41 9 12
+41 3 3
+47 3 47
+47 3 15
+Finish: 47 3
+
+Here we can see that whenever I checked for the largest and smallest values, I started out with opposite values for each of the variables.
+For the largest variable, I started out with 0 and for the smallest I started out with 127.
+It would be better for us to start out with our first number in the list which in this case would be 9.
+What we can also do is use a " None " type variable.
+This variable does not store a numberical value.  It is almost like we call the variable but do not assign it a value.
+This variable by assigning a variable to " None " written as such with a capital " N ".
+Here is my meathod for finding the largest and smallest values in the list using the None type:
+
+largest = None
+smallest = None
+print ( 'Start:', largest, smallest )
+for number in [ 9, 41, 12, 3, 47, 15 ] :
+    if largest is None :
+        largest = number
+    elif number > largest :
+        largest = number
+    if smallest is None :
+        smallest = number
+    elif number < smallest :
+        smallest = number
+    print ( largest, smallest, number )
+print ( 'Finish:', largest, smallest )
+
+Output:
+
+Start: None None
+9 9 9
+41 9 41
+41 9 12
+41 3 3
+47 3 47
+47 3 15
+Finish: 47 3
+
+One thing to note here is that the if statements used here are checking whether our variable is assigned by asking if are variable is None.
+Before we compare values of our variables we MUST assign our variable a number or else the code will not run and we will get an error code.
+We use " is " and " is not " as logical operators here specifically for our None type operator since for some reason the double equal sign " == " is not strong enough or something.
+All I know is that " is " and " is not " mean " is the same as " and " is not the same as " and are stronger than " == " and " =! " since the first two are type specific meaning that if the type of the compared variables are not the same, the comparison using " is " will always be false.
+For example, " 0 == 0.0 " is true but " 0 is 0.0 " is false since 0 is an integer and 0.0 is a float.

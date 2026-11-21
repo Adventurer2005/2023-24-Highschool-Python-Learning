@@ -1,0 +1,175 @@
+Chapter 4:
+
+Lesson 1:
+
+Functions are good for collecting multiple " steps " together.
+I guess that I've been using the " function " word incorrectly in my previous notes, sorry.
+The function ( Idk what to call it ) " def " is used to define a function.
+Here's how we can use it:
+
+def greeting() :
+    print ( 'Hello! ' )
+    print ( "It's nice to see you! " )
+greeting()
+print ( '<again> ' )
+greeting()
+
+Output:
+
+Hello! 
+It's nice to see you! 
+<again>
+Hello!
+It's nice to see you!
+
+I guess that I have been using the word " function " correctly after all.
+The functions that I have been referring to up to this point are called " Built-in functions ".
+" Defined Funtions " are created with the " def " function.
+Here is the definition of a function:
+
+In Python a function is some reusable code that takes argument(s) as input, does some computation, and then returns result(s).
+The funtion can be defined using " def " and called by using the funtion's name with parenthesis after it " () ".
+
+Here is an example:
+
+string = input ( 'type something: ' ) [ abc ]
+tiny = min ( string )
+big = max ( string )
+print ( tiny )
+print ( big )
+
+Output:
+
+a
+c
+
+the min function returns the letter " a " and the max funtion returns the letter " c " since " a " has the least value and " c " has the most value in the string " abc ".
+A type conversion is a good example of a function returning something:
+
+int = 21
+float = float ( int )
+print ( float )
+
+Output:
+
+21.0
+
+Here we can see that the funtion " float() " returned our integer ( 21 ) as a float ( 21.0 ).
+
+Lesson 2:
+
+To define a function we need to use the " def " function and after naming our funtion, all of the indented code under our function is inside our funtion.
+Make sure to call your function since if you do not call it, it will not run.
+
+print ( 'Let me read someting to you. ' )
+
+def verses() :
+    print ( 'In the beginning God created the heaven and the earth. ' )
+    print ( 'And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters. ' )
+
+print ( 'I hope you enjoyed... ' )
+
+Output:
+
+Let me read someting to you. 
+I hope you enjoyed... 
+
+Here, it can be seen that the text is not seen in the output since the funtion was not called.
+Here's how the function should look:
+
+print ( 'Let me read someting to you. ' )
+
+def verses() :
+    print ( 'In the beginning God created the heaven and the earth. ' )
+    print ( 'And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters. ' )
+
+verses()
+print ( 'I hope you enjoyed... ' )
+
+Output:
+
+Let me read someting to you. 
+In the beginning God created the heaven and the earth. 
+And the earth was without form, and void; and darkness was upon the face of 
+the deep. And the Spirit of God moved upon the face of the waters.
+I hope you enjoyed...
+
+Now we see the text since we called the function.
+
+Here is the definition of an arguement:
+
+An arguement is a value we pass into the function as its input when we call the function.
+We use arguements so we can direct the function to do different kinds of work when we call it at different times.
+We put the atguements in parentheses " () " after the name of the function
+
+The variables inside the function's parentheses can also be called " parameters ".
+Here is an example:
+
+def greet ( lang ) :
+    if lang == 'en' :
+        print ( 'Hello! ')
+    elif lang == 'es' :
+        print ( '¡Hola! ' )
+    elif lang == 'ru' :
+        print ( 'Привет! ' )
+    else :
+        print ( 'Hello! ' )
+
+greet ( 'en' )
+greet ( 'es' )
+greet ( 'ru' )
+
+Output:
+
+Hello! 
+¡Hola! 
+Привет!
+
+The three greetings there are Return values.
+The computer does some computations in the function and returns a value after executing the function.
+There is a function for returning values called the " return " funtion but it is not necessary in Python.
+A " fruitful " function is one that produces a result ( or a return value )
+Here is our program using the " return " function:
+
+def greet ( lang ) :
+    if lang == 'en' :
+        return 'Hello'
+    elif lang == 'es' :
+        return '¡Hola'
+    elif lang == 'ru' :
+        return 'Привет'
+    else :
+        return 'Hello'
+
+print ( greet ( 'en' ), 'John! ' )
+print ( greet ( 'es' ), 'José! ' )
+print ( greet ( 'ru' ), 'Михаил! ' )
+
+Output:
+
+Hello John! 
+¡Hola José! 
+Привет Михаил! 
+
+You can have multiple parameters in a function by having a comma " , " separating them.
+Here is an example of that:
+
+def add( a, b ):
+    sum = a + b
+    return sum
+x = add( 5, 7 )
+print ( x )
+
+Output:
+
+12
+
+A function that does not return a result is a " non-fruitful " function or a " void " function.
+
+Here are some helpful tips:
+
+Organize your code into paragraphs to complete a thought and name it as a certain function.
+Try not to repeat yourself
+Break complicated stuff into chunck
+Make a library of common processes that are done over and over in your code.
+

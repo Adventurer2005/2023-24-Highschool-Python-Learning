@@ -1,0 +1,197 @@
+Chapter 8:
+
+Lesson 1:
+
+Algorithms are a set of rules or steps used to solve a problem.
+Data structures are a way of organizing data in a computer.
+Variables only hold one value of information; if a new value is put into a variable, it is overwritten.
+Collections allow the programmer to put multiple variables into it.
+For syntax, the list contents are surrounded by square brackets and the elements in the list are separated by commas.
+A list can also contain a list and a list can be empty.
+Here is an example of this:
+
+Person1 = 'Abraham'
+Person2 = 'Joaquin'
+Person3 = 'Isamu'
+MyFriends = [ Person1 , Person2 , Person3 ]
+
+Python can also handle a list that contains multiple different types of variables.
+Lists are also used in for loops in iteration.
+Just like European buildings, lists start on 0 and not on one.
+
+Strings are " immutable " meaning that we cannot change the contents inside of a string variable.  We must make a new string variable to do so.
+Lists however are in fact " mutable " meaning that we can change the contents of a list variable by variable, using the index operator.
+Here's an example:
+
+list = [ 1 , 2 , 3 , 4 ]
+print ( list )
+list [ 2 ] = 12
+print ( list )
+
+Output:
+
+[1, 2, 3, 4]
+[1, 2, 12, 4]
+
+We can use the " len() " function to see how long a list is by looking at how many elements / variables it contains.
+Here's an example:
+
+list = [ 'caleb' , 'you' , 10 ]
+print ( len ( list ) )
+
+Output:
+
+3
+
+The " range() " function returns a list of nmbers that range from zero to less than the perameter.
+An index can be constructed using for and an integer iterator.
+
+Here is an example:
+
+friends = [ 'Logan' , 'Christopher' , 'Jackson' ]
+
+for friend in friends :
+    print ( 'Happy New Year,', friend )
+print()
+for i in range ( len ( friends ) ) :
+    friend = friends [ i ]
+    print ( 'Happy New Year,', friend )
+
+Output:
+
+Happy New Year, Logan
+Happy New Year, Christopher
+Happy New Year, Jackson
+
+Happy New Year, Logan
+Happy New Year, Christopher
+Happy New Year, Jackson
+
+As can be seen, these loops do the exact same thing except the first loop only goes through a linear iteration whereas the second loop goes through the linear iteration with a specified variable " i ".
+
+Lesson 2:
+
+Lists can also be concatenated by having a plus sign operator " + " between the two lists.
+Lists can also be sliced by using a starting number and an ending number separated by a colon in a square bracket:
+
+list = [ 9 , 8 , 7 , 6 , 5 , 4 , 3 , 2 , 1 ]
+slice = list [ 1 : 3 ]
+print ( slice )
+
+Ouptut:
+
+[8, 7]
+
+Here are some meathods for lists I guess:
+
+x = list()
+print ( type ( x ) )
+print ( dir ( x ) )
+
+Output:
+
+<class 'list'>
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getstate__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+
+We can create an empty list and then add elements using the " append " method.
+The list stays in order and new elements are added at the end of the list.
+
+Here is an example:
+
+stuff = list()
+stuff.append('name')
+stuff.append(3.14)
+print ( stuff )
+
+Output:
+
+['name', 3.14]
+
+A list can be checked to see if there is an item in a list by using the " in " and " not " operators:
+
+numbers = [ 4 , 7 , 3 , 6 , 2 , 5 , 1 ]
+print ( 9 in numbers )
+print ( 7 in numbers )
+print ( 0 not in numbers )
+
+Output:
+
+False
+True
+True
+
+A list can hold many items and keep the items in order until something changes.
+A list can be sorted / can change in order.
+The " sort " meathod is used to sort the list.
+
+letters = [ 'b' , 'r' , 'u' , 'h' ]
+letters.sort()
+print ( letters )
+
+Output:
+
+['b', 'h', 'r', 'u']
+
+There are other built in functions for lists such as " max() ", " min() ", and " sum() ".
+
+Here is an example of using iteration vs using the built-in function:
+
+print ( 'Using iteration:' )
+list = [ 1 , 5 , 7 , 10 , 4 ]
+total = 0
+iteration = 0
+for number in list :
+    total = total + number
+    iteration = iteration + 1
+average = total / iteration
+print ( average )
+print ( 'Using built-in function:' )
+average = sum ( list ) / len ( list )
+print ( average )
+
+Output:
+
+Using iteration:
+5.4
+Using built-in function:
+5.4
+
+Lesson 3:
+
+The " split() " function is used to split words separated by spaces in a string into different items in a list:
+
+abc = "Hello good friend"
+list = abc.split()
+print ( list )
+print ( len ( list ) )
+print ( list [ 1 ] )
+
+Output:
+
+['Hello', 'good', 'friend']
+3
+good
+
+the split function also removes multiple spaces in strings.
+A character can be added to show the split function where to split the variables:
+
+names = "Caleb;Jonathan;Timothy"
+list = names.split ( ';' )
+print ( list )
+
+Output:
+
+['Caleb', 'Jonathan', 'Timothy']
+
+Here is a double split pattern that can be used to find specific information in a piece of text ( the domain of an email ):
+
+text = "From caleb.yates.2005@gmail.com Sat Dec 30 22:49 2023"
+words = text.split()
+email = words [ 1 ]
+partsofemail = email.split ( '@' )
+domain = partsofemail [ 1 ]
+print ( domain )
+
+Output:
+
+gmail.com

@@ -1,0 +1,134 @@
+Chapter 3 Notes:
+
+Lesson 1:
+
+The " if() " function is used to make a conditional statement called the " if statement ".
+
+Here are some operators:
+<   Less than
+<=  Less than or Equal to
+==  Equal to
+>=  Greater than or Equal to
+>   Greater than
+!=  Not equal
+
+These statements are either " true " or " false ".  This is also known as a " boolean " statement.
+The if statement line must end in a colon " : ".
+After using the " if() " function, all the functions under it should have a tab to show that they are only ran if the condition is met.
+Indentation is an important part in Python.
+Now something to note is that usually it is good practice to make sure that the tab is set to four spaces.
+The code might not work if there are not four spaces for each indentation.
+Make sure to increase / maintain after if or for and decrease to indicate the end of a block.
+
+Example:
+
+x = 5
+if = > 2 :
+    print ( 'Bigger than 2' )
+    print ( 'Still bigger' )
+print ( 'Done with 2' )
+
+for i in range ( 5 ) :
+    print ( i )
+    if i > 2 :
+        print ( ' Bigger than 2' )
+    print ( ' Done with i', i)
+print ( 'All done' )
+
+Ouput:
+
+Bigger than 2
+Still bigger
+Done with 2
+0
+Done with i 0
+1
+Done with i 1
+2
+Done with i 2
+3
+Bigger than 2
+Done with i 3
+4
+Bigger than 2
+Done with i 4
+All done
+
+Nested indents are used when there is an if statement inside an if statement.
+Two-way decisions are also used in Python whenever there is an if statment and another if statemnt that both cannot be true.
+The " elif() " function is used for this.  It stands for " else if ".
+The " else() " function can be used for all other conditions that do not meet the prior if and else if statements.
+
+Lesson 2:
+
+There is a multi-way branch in if statements
+It uses the " elif() " function.  Also remember that an elif statement is only used when two or more if statements are true if the other(s) are false.
+Also the " else() " function is used in this branch.
+If multiple elif functions are used, make sure to put them in order.
+
+Here is an example of what I mean:
+
+num = input ( 'choose a number ' )
+x = int ( num )
+if x < 0 :
+    print ( ' not there ' )
+elif x < 5 :
+    print ( ' small ' )
+elif x < 20 :
+    print ( ' big ' )
+elif x < 10 :
+    print ( ' medium ' )
+else :
+    print ( ' too much ' )
+
+Here where it says " elif x < 20 : ", if the number is 9 for example, it will run through this line first and it will not run through the line that says " elif x < 10 : " since if the first statement is true then all the other statements after are false.
+Here's what the code should look like:
+
+num = input ( ' choose a number ' )
+x = int ( num )
+if x < 0 :
+    print ( ' not there ' )
+elif x < 5 :
+    print ( ' small ' )
+elif x < 10 :
+    print ( ' medium ' )
+elif x < 20 :
+    print ( ' big ' )
+else :
+    print ( ' too much ' )
+
+See that the order of statements goes from checking if the number is less than 0, then 5, then 10, and then 20.
+
+If there is a dangerous piece of code that might be unstable with some user input a Try / Except Structure would be helpful for those situations.
+If the try works then the except is skipped but if the try fails then the except section is jumped to.
+Here's an exapmle of a user messing up the code with the wrong type of input:
+
+number = input ( 'give me a number ' ) [ no ]
+x = int ( number )
+print ( x )
+
+Output:
+
+Traceback (most recent call last):
+  File "E:\Documents\Coding\Python_Learning\scratch.py", line 1, in <module>    number = input ( 'give me a number ' ) [ no ]
+                                              ^^
+NameError: name 'no' is not defined
+
+Here, we can see that our program was not able to do anything without proper input.
+
+Here's the code with the try / except structure:
+
+number = input ( 'give me a number ' )
+try :
+    x = int ( number )
+except :
+    print ( 'bruh, [', number, "] isn't a number" )
+    x = 0
+print ( x )
+
+Output:
+
+bruh, [ no ] isn't a number
+0
+
+Here we can see that the user tried to put a string as a number and the program recognized that and went into the except structure.
